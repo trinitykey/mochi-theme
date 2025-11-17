@@ -91,7 +91,7 @@ html:not(.dark) {
 }
 
 html body {
-  --fonts-monospace: Ubuntu Mono;
+  --fonts-monospace: Atkinson Hyperlegible;
   --mochi--review-button--background: var(--mochi--side-bar--background);
   --mochi--card--color: var(--fg);
   --mochi--md-code--background: var(--bg2);
@@ -354,7 +354,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Avenir Next Condensed";
+  font-family: "HanWangKaiMediumChuIn";
   font-weight: 500 !important;
   text-wrap: balance; /* Not yet supported in the Electron version Mochi is using */
 }
@@ -601,4 +601,4 @@ hla {
   color: var(--blue);
 }
 
-/*# sourceMappingURL=everforest-primary.css.map */
+/*# sourceMappingURL=bopomofo.css.map */
