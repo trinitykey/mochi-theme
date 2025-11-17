@@ -1,0 +1,605 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap");
+/* -------------------------------------------- */
+/* ---------------- Root styles --------------- */
+/* -------------------------------------------- */
+html.dark {
+  /* Everforest colors */
+  --bg-dim: #232a2e;
+  --bg0: #2d353b;
+  --bg1: #343f44;
+  --bg2: #3d484d;
+  --bg3: #475258;
+  --bg4: #4f585e;
+  --bg5: #56635f;
+  --bg-visual: #543a48;
+  --bg-red: #514045;
+  --bg-yellow: #4d4c43;
+  --bg-green: #425047;
+  --bg-blue: #3a515d;
+  --bg-purple: #4a444e;
+  --fg: #d3c6aa;
+  --red: #e67e80;
+  --orange: #e69875;
+  --yellow: #dbbc7f;
+  --green: #a7c080;
+  --aqua: #83c092;
+  --blue: #7fbbb3;
+  --purple: #d699b6;
+  --grey0: #7a8478;
+  --grey1: #859289;
+  --grey2: #9da9a0;
+  --statusline1: #a7c080;
+  --statusline2: #d3c6aa;
+  --statusline3: #e67e80;
+  /* Mochi variables */
+  --mochi--card--background: var(--bg1);
+  --mochi--card-box--background: var(--bg1);
+  --mochi--button--background: var(--bg1);
+  --mochi--side-bar--background: var(--bg-dim);
+  --mochi--card--background-hover: var(--bg-blue);
+  --mochi--box-select--background: var(--bg0);
+  --mochi--box-select--background-hover: var(--bg-blue);
+  --mochi--side-bar-icon--color: var(--blue);
+  --mochi--review-history--row-background-dark: var(--bg-dim);
+  --mochi--button-hover--background: var(--bg-blue);
+  --mochi----border-color: var(--bg3);
+  --mochi--side-bar-item-selected--background: var(--bg1);
+}
+
+html:not(.dark) {
+  /* Everforest colors */
+  --bg-dim: #f2efdf;
+  --bg0: #fffbef;
+  --bg1: #f8f5e4;
+  --bg2: #f2efdf;
+  --bg3: #edeada;
+  --bg4: #e8e5d5;
+  --bg5: #bec5b2;
+  --bg-visual: #f0f2d4;
+  --bg-red: #ffe7de;
+  --bg-yellow: #fef2d5;
+  --bg-green: #f3f5d9;
+  --bg-blue: #ecf5ed;
+  --bg-purple: #fceced;
+  --fg: #5c6a72;
+  --red: #f85552;
+  --orange: #f57d26;
+  --yellow: #dfa000;
+  --green: #8da101;
+  --aqua: #35a77c;
+  --blue: #3a94c5;
+  --purple: #df69ba;
+  --grey0: #a6b0a0;
+  --grey1: #939f91;
+  --grey2: #829181;
+  --statusline1: #93b259;
+  --statusline2: #708089;
+  --statusline3: #e66868;
+  /* Mochi variables */
+  --mochi--card--background: var(--bg0);
+  --mochi--card-box--background: var(--bg0);
+  --mochi--button--background: var(--bg0);
+  --mochi--side-bar--background: var(--bg3);
+  --mochi--card--background-hover: var(--bg-green);
+  --mochi--box-select--background: var(--bg2);
+  --mochi--box-select--background-hover: var(--bg5);
+  --mochi--side-bar-icon--color: var(--grey2);
+  --mochi--review-history--row-background-dark: var(--bg3);
+  --mochi--button-hover--background: var(--bg5);
+  --mochi--side-bar-item-selected--background: var(--bg5);
+}
+
+html body {
+  --fonts-monospace: Ubuntu Mono;
+  --mochi--review-button--background: var(--mochi--side-bar--background);
+  --mochi--card--color: var(--fg);
+  --mochi--md-code--background: var(--bg2);
+  --mochi--cloze-2--background-color: var(--mochi--side-bar--background);
+  --mochi----background-color: var(--bg0);
+  --mochi--jump-to--selection-bg: var(--bg2);
+  --mochi--show-more--background: var(--mochi--side-bar--background);
+  --mochi--show-more--background-hover: var(--bg5);
+  --mochi--progressbar--foreground: var(--bg5);
+  --mochi--inverted-button--background: var(--grey2);
+  --mochi--inverted-button--count-background: var(--grey0);
+  --mochi--inverted-button-hover--background: var(--grey1);
+  --mochi--progressbar--foreground-red: var(--statusline3);
+  --mochi--re-review--icon: var(--red);
+  --mochi--card--border-color-active: var(--bg5);
+  --mochi--md-hr--border-small: 1px dashed var(--grey0);
+}
+
+/* -------------------------------------------- */
+/* ------------- memo_views edits ------------- */
+/* -------------------------------------------- */
+/* Main content background */
+.memo_views_frame_frame-container {
+  background-color: var(--bg1);
+  background-size: 50px 50px;
+  /* Background pattern - dots */
+  background-image: radial-gradient(circle, hsl(37, 38%, 83%) 1px, rgba(0, 0, 0, 0) 1px);
+}
+.dark .memo_views_frame_frame-container {
+  background-color: var(--bg0);
+  background-image: radial-gradient(circle, hsl(31, 27%, 25%) 1px, rgba(0, 0, 0, 0) 1px);
+}
+
+/* Add bg to the top bar of main content to hide the dot pattern */
+.memo_views_pages_deck_breadcrumbs-container {
+  background-color: var(--bg1);
+}
+.dark .memo_views_pages_deck_breadcrumbs-container {
+  background-color: var(--bg0);
+}
+
+/* Fix dashbaord overview background anomoly */
+.memo_views_pages_layout_frame-content > div:nth-child(3) {
+  background-color: initial !important;
+}
+
+/* Show More gradient */
+.memo_views_atoms_card_tile-fade {
+  background: linear-gradient(0deg, var(--bg0), var(--bg0) 33px, transparent);
+}
+.dark .memo_views_atoms_card_tile-fade {
+  background: linear-gradient(0deg, var(--bg1), var(--bg1) 33px, transparent);
+}
+.memo_views_card_list-view_card-container:hover .memo_views_atoms_card_tile-fade, .memo_views_card_grid-view_card-container:hover .memo_views_atoms_card_tile-fade {
+  background: linear-gradient(0deg, var(--bg-green), var(--bg-green) 33px, transparent);
+}
+.dark .memo_views_card_list-view_card-container:hover .memo_views_atoms_card_tile-fade, .dark .memo_views_card_grid-view_card-container:hover .memo_views_atoms_card_tile-fade {
+  background: linear-gradient(0deg, var(--bg-blue), var(--bg-blue) 33px, transparent);
+}
+
+/* Editor background */
+.memo_views_modal_card_editor-background {
+  background-color: var(--bg1);
+  font-size: 0.95em !important;
+}
+.dark .memo_views_modal_card_editor-background {
+  background-color: var(--bg0);
+}
+
+/* Cards font color */
+.memo_views_modal_modal-dialog {
+  color: var(--fg);
+}
+
+/* Fix filter menu colors in dark mode */
+.dark .memo_views_atoms_menu_menu {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Cloze backgrounds */
+.memo_views_diagrams_diagram-cloze {
+  background-color: var(--grey1);
+}
+
+/* Make foot note jumps smooth */
+.memo_views_modal_modal-container {
+  scroll-behavior: smooth;
+}
+
+/* 3D button effect */
+.memo_views_atoms_button_default-button,
+.memo_views_atoms_button_inverted-button {
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05), inset 0px -3px 0px 0px rgba(0, 0, 0, 0.15) !important;
+}
+.dark .memo_views_atoms_button_default-button,
+.dark .memo_views_atoms_button_inverted-button {
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05), inset 0px -3px 0px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Grid view */
+.memo_views_card_grid-view_container {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* Reset images with custom width */
+}
+.memo_views_card_grid-view_container img {
+  max-width: 100% !important;
+}
+
+/* Column view */
+.memo_views_card_column-view_left-column-container {
+  width: 330px;
+  border-left: none;
+  border-right: none;
+}
+
+.memo_views_pages_deck_breadcrumbs-container {
+  border: none !important;
+}
+
+.memo_views_card_column-view_right-column-container {
+  color: var(--fg);
+  background-color: var(--mochi--card--background);
+  padding: 0; /* Remove the think border in editing mode */
+}
+
+.memo_views_card_column-view_column-row-markdown-container h1,
+.memo_views_card_grid-view_card-container h1 {
+  font-size: 1.1em !important;
+  font-weight: 600 !important;
+}
+.memo_views_card_column-view_column-row-markdown-container h2,
+.memo_views_card_column-view_column-row-markdown-container h3,
+.memo_views_card_column-view_column-row-markdown-container h4,
+.memo_views_card_grid-view_card-container h2,
+.memo_views_card_grid-view_card-container h3,
+.memo_views_card_grid-view_card-container h4 {
+  font-size: 1em !important;
+}
+
+/* Reset opacity of cards in column view */
+.memo_views_card_column-view_column-row-markdown-container .paragraph {
+  opacity: 1;
+}
+
+/* Remove divider lines in note footer in column view */
+.memo_views_molecules_card-info_content-wrapper > div + div {
+  border: none;
+  margin-top: 0;
+}
+
+/* Remove box shadow */
+.memo_views_card_column-view_column-row-container {
+  box-shadow: none;
+}
+
+.memo_views_card_column-view_right-column-outer-container {
+  border-radius: 8px;
+  margin: 10px 10px 10px 0;
+  border: 1px solid var(--mochi----border-color);
+}
+
+.memo_views_card_column-view_editor-styles {
+  padding: 3em 3em 30vh 3em; /* Compensate for removing outer padding */
+}
+
+.memo_views_card_column-view_side-class {
+  padding: 3em 3em 5em; /* Match padding to editing mode */
+}
+
+/* -------------------------------------------- */
+/* ----------- memo_markdown edits ------------ */
+/* -------------------------------------------- */
+/* Cards font family */
+/* Tags - inline and in card status */
+.memo_markdown_components_tag-link {
+  font-family: "HanWangKaiMediumChuIn"; fake: var(--fonts-monospace);
+  border: 1px solid var(--bg4);
+}
+
+/* Inline code style */
+code:not(pre code):not(kbd code) {
+  color: var(--blue) !important;
+  border: 1px solid;
+  white-space: nowrap; /* prevent work break for inline code */
+  margin-right: 0.1em; /* prevent trailing punctuations touching the border */
+}
+
+/* Highlighted text with == */
+.memo_markdown_styles_markdown-class mark {
+  border-radius: 0;
+  color: var(--bg0);
+  background-color: var(--aqua);
+  background-image: none;
+  padding: 0.2em;
+  margin: initial;
+  vertical-align: middle;
+}
+.memo_markdown_styles_markdown-class em mark {
+  background-color: var(--blue);
+  font-style: normal;
+}
+.memo_markdown_styles_markdown-class strong mark {
+  background-color: var(--yellow);
+  font-weight: normal;
+}
+.memo_markdown_styles_markdown-class strong em mark {
+  background-color: var(--red);
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Reference card links */
+.memo_markdown_components_inline-link {
+  /* Custome styles */
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+}
+.dark .memo_markdown_components_inline-link {
+  background: var(--bg3);
+}
+.dark .memo_markdown_components_inline-link:hover {
+  background: var(--bg4);
+}
+
+/* Increase monospace font */
+/* Only for UbutntuMono Nerd Mono font because it's inherently smaller */
+.memo_markdown_styles_markdown-class code,
+.memo_markdown_styles_markdown-class pre {
+  font-size: 0.95em !important;
+}
+
+/* Used for footnote legends */
+.memo_markdown_components_blue-link {
+  opacity: 0.9;
+}
+h1 .memo_markdown_components_blue-link, h2 .memo_markdown_components_blue-link, h3 .memo_markdown_components_blue-link, h4 .memo_markdown_components_blue-link, h5 .memo_markdown_components_blue-link, h6 .memo_markdown_components_blue-link {
+  font-size: initial;
+}
+
+/* -------------------------------------------- */
+/* ----------- Raw HTML tags edits ------------ */
+/* -------------------------------------------- */
+strong {
+  color: var(--statusline3);
+}
+
+em {
+  color: var(--aqua);
+}
+
+strong em {
+  color: var(--purple);
+}
+
+/* ----------------- Headings ----------------- */
+/* General */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "HanWangKaiMediumChuIn"; fake: "HanWangKaiMediumChuIn"; fake: "Avenir Next Condensed";
+  font-weight: 500 !important;
+  text-wrap: balance; /* Not yet supported in the Electron version Mochi is using */
+}
+
+/* Font size */
+h2 {
+  font-size: 1.8em !important;
+}
+
+h3 {
+  font-size: 1.5em !important;
+}
+
+h4 {
+  font-size: 1.3em !important;
+}
+
+h5 {
+  font-size: 1em !important;
+}
+
+h6 {
+  font-size: 1em !important;
+}
+
+/* Rainbow headings */
+h1 {
+  color: var(--fg);
+}
+
+h2 {
+  color: var(--red);
+}
+
+h3 {
+  color: var(--aqua);
+}
+
+h4 {
+  color: var(--orange);
+}
+
+h5 {
+  color: var(--blue);
+}
+
+h6 {
+  color: var(--yellow);
+}
+
+/* -------- Custom keyboard input style ------- */
+
+kbd {
+  font-family: "HanWangKaiMediumChuIn"; fake: var(--fonts-monospace);
+  color: var(--statusline3) !important;
+  background: var(--bg2);
+  border-radius: 4px;
+  padding: 0.2em 0.45em;
+  margin-right: 0.1em;
+  white-space: nowrap;
+}
+.dark kbd {
+  background: var(--bg0);
+}
+kbd {
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05), inset 0px -3px 0px 0px rgba(0, 0, 0, 0.15) !important;
+}
+.dark kbd {
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05), inset 0px -3px 0px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ------------------ Tables ------------------ */
+table {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+thead tr {
+  background-color: var(--bg-green);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--bg2);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--bg1);
+}
+
+/* ------------ Custom list styles ------------ */
+ol > li,
+ul > li {
+  position: relative;
+}
+
+ol > li {
+  list-style-type: none;
+}
+
+/* Custom numbered bullets */
+ol > li::before {
+  --bullet-size: 1.3rem;
+  content: counter(list-item);
+  position: absolute;
+  top: 0.4rem;
+  inset-inline-start: -1.7rem;
+  width: var(--bullet-size);
+  height: var(--bullet-size);
+  line-height: var(--bullet-size);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--fg);
+  background-color: var(--bg2);
+  border-radius: 99rem;
+  box-shadow: inset 0 0 0 1px var(--bg4);
+  font-family: "HanWangKaiMediumChuIn"; fake: "Cascadia Code" !important;
+}
+.dark ol > li::before {
+  background-color: var(--bg3);
+  border-radius: 99rem;
+  box-shadow: inset 0 0 0 1px var(--bg5);
+}
+
+/* Indent lines */
+ol > li::after,
+ul > li::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 5px;
+  inset-inline-start: -1.1rem;
+  width: 1px;
+  background-color: var(--bg4);
+}
+
+ul > li::after {
+  inset-inline-start: -0.75rem;
+}
+
+/* Experimental */
+hlr,
+hla {
+  font-family: "HanWangKaiMediumChuIn"; fake: var(--fonts-monospace);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid;
+  background-color: var(--bg2);
+}
+
+hlr {
+  color: var(--red);
+}
+
+hla {
+  color: var(--orange);
+}
+
+/* ------------------------------------------- */
+/* ----------- Syntax highlighting ------------*/
+/* ------------------------------------------- */
+.hljs {
+  color: var(--fg) !important;
+  background: var(--bg-dim) !important;
+  padding: 0.3em !important;
+}
+
+.hljs-comment, .dark .hljs-comment,
+.hljs-quote,
+.dark .hljs-quote {
+  color: var(--grey1);
+}
+
+.hljs-doctag, .dark .hljs-doctag,
+.hljs-keyword,
+.dark .hljs-keyword,
+.hljs-formula,
+.dark .hljs-formula,
+.hljs-number,
+.dark .hljs-number {
+  color: var(--purple);
+}
+
+.hljs-section, .dark .hljs-section,
+.hljs-name,
+.dark .hljs-name,
+.hljs-selector-tag,
+.dark .hljs-selector-tag,
+.hljs-deletion,
+.dark .hljs-deletion,
+.hljs-subst,
+.dark .hljs-subst {
+  color: var(--red);
+}
+
+.hljs-literal, .dark .hljs-literal {
+  color: var(--aqua);
+}
+
+.hljs-string, .dark .hljs-string,
+.hljs-regexp,
+.dark .hljs-regexp,
+.hljs-addition,
+.dark .hljs-addition,
+.hljs-attribute,
+.dark .hljs-attribute,
+.hljs-meta-string,
+.dark .hljs-meta-string {
+  color: var(--green);
+}
+
+.hljs-built_in, .dark .hljs-built_in,
+.hljs-class .hljs-title,
+.dark .hljs-class .hljs-title {
+  color: var(--yellow);
+}
+
+.hljs-attr, .dark .hljs-attr,
+.hljs-variable,
+.dark .hljs-variable,
+.hljs-template-variable,
+.dark .hljs-template-variable,
+.hljs-type,
+.dark .hljs-type,
+.hljs-selector-class,
+.dark .hljs-selector-class,
+.hljs-selector-attr,
+.dark .hljs-selector-attr,
+.hljs-selector-pseudo,
+.dark .hljs-selector-pseudo {
+  color: var(--orange);
+}
+
+.hljs-symbol, .dark .hljs-symbol,
+.hljs-bullet,
+.dark .hljs-bullet,
+.hljs-link,
+.dark .hljs-link,
+.hljs-meta,
+.dark .hljs-meta,
+.hljs-selector-id,
+.dark .hljs-selector-id,
+.hljs-title,
+.dark .hljs-title {
+  color: var(--blue);
+}
+
+/*# sourceMappingURL=everforest-primary.css.map */
